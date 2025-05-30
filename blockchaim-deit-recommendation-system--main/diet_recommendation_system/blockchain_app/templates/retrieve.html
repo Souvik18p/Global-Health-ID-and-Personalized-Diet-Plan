@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retrieve Patient Record</title>
+    <link rel="stylesheet" href="{% static 'css/retrieve.css' %}">
+</head>
+<body>
+
+    <h1>Retrieve Patient Record</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="patient_id" placeholder="Enter Patient ID" required>
+        <button type="submit">Retrieve</button>
+    </form>
+
+    {% if patient %}
+        <div class="details">
+            <p><strong>Patient ID:</strong> {{ patient.patient_id }}</p>
+            <p><strong>Hospital:</strong> {{ patient.hospital }}</p>
+            <p><strong>Doctor:</strong> {{ patient.doctor }}</p>
+            <p><strong>Patient Name:</strong> {{ patient.patient_name }}</p>
+            <p><strong>Age:</strong> {{ patient.age }}</p>
+            <p><strong>Weight:</strong> {{ patient.weight }}</p>
+            <p><strong>Height:</strong> {{ patient.height }}</p>
+            <p><strong>Issues:</strong> {{ patient.issues }}</p>
+            <p><strong>Suggestions:</strong> {{ patient.suggestions }}</p>
+        </div>
+    {% elif not_found %}
+        <div class="details">
+            <p style="color: red; text-align: center;"><strong>Patient ID not found.</strong></p>
+        </div>
+    {% endif %}
+
+</body>
+</html>

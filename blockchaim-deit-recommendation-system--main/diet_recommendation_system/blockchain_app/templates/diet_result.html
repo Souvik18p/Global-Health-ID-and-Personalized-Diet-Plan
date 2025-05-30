@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Diet Plan</title>
+    <link rel="stylesheet" href="{% static 'css/diet_result.css' %}">
+</head>
+<body>
+    <h1>Your 7-Day Personalized Diet Plan</h1>
+
+    {% for day, meals in diet_plan.items %}
+        <h2>{{ day }}</h2>
+        <ul>
+            <li><strong>Breakfast:</strong> {{ meals.Breakfast|join:", " }}</li>
+            <li><strong>Lunch:</strong> {{ meals.Lunch|join:", " }}</li>
+            <li><strong>Dinner:</strong> {{ meals.Dinner|join:", " }}</li>
+        </ul>
+    {% endfor %}
+
+    <a href="{% url 'generate_plan' %}" class="generate-button">Generate Another Plan</a>
+</body>
+</html>

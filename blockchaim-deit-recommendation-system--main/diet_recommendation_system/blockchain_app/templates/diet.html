@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Health ID</title>
+  <link rel="stylesheet" href="{% static 'css/diet.css' %}"/>
+</head>
+<body>
+  <div class="container">
+    <h2>Create Your Health ID</h2>
+
+    <form method="post">
+      {% csrf_token %}
+      <div class="input-group">
+        <div>
+          <h3>Hospital Name</h3> <input type="text" name="hospital" placeholder="Enter hospital name" required><br><br>
+        </div>
+        <div>
+          <h3>Doctor Name</h3> <input type="text" name="doctor" placeholder="Enter doctor's name" required><br><br>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div>
+          <h3>Patient Name</h3> <input type="text" name="patient_name" placeholder="Enter patient's name" required><br><br>
+        </div>
+        <div>
+          <h3>Age</h3> <input type="number" name="age" placeholder="Enter age" required><br><br>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div>
+          <h3>Weight (kg)</h3> <input type="number" step="0.1" name="weight" placeholder="Enter weight in kg" required><br><br>
+        </div>
+        <div>
+          <h3>Height (cm)</h3> <input type="number" step="0.1" name="height" placeholder="Enter height in cm" required><br><br>
+        </div>
+      </div>
+
+      <h3>Health Issues</h3> <textarea name="issues" placeholder="Describe any health issues" required></textarea><br><br>
+  
+      <h3>Doctor's Suggestions</h3> <textarea name="suggestions" placeholder="Enter doctor's suggestions" required></textarea><br><br>
+      <button type="submit">Create Health ID</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById("health-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const data = {};
+      formData.forEach((value, key) => data[key] = value);
+
+      try {
+        const res = await fetch("http://127.0.0.1:5000/create_block", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+        alert(result.message || result.error || "Health ID created!");
+      } catch (err) {
+        console.error("Error:", err);
+        alert("Something went wrong. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!-- app/templates/success.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+    <link rel="stylesheet" href="{% static 'css/success.css' %}">
+    <style>
+        body {
+            background-color: #ecf0f3;
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 50px;
+        }
+        p {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #555;
+        }
+        .generate-button {
+            display: inline-block;
+            margin: 40px auto;
+            padding: 14px 28px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-align: center;
+        }
+        .generate-button:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+        }
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Health ID Created Successfully!</h1>
+    <p>Your Patient ID is: <strong>{{ patient_id }}</strong></p>
+    <p>Current Hash: <strong>{{ current_hash }}</strong></p>
+    <p>Previous Hash: <strong>{{ previous_hash }}</strong></p>
+    <p>Hospital: <strong>{{ hospital }}</strong></p>
+    <p>Doctor: <strong>{{ doctor}}</strong></p>
+    <p>Patient Name: <strong>{{ patient_name }}</strong></p>
+    <p>Age: <strong>{{ age }}</strong></p>
+    <p>Weight: <strong>{{ weight }}</strong></p>
+    <p>Height: <strong>{{ height }}</strong></p>
+    <p>Issues: <strong>{{ issues }}</strong></p>
+    <p>Suggestions: <strong>{{ suggestions }}</strong></p>
+    <div style="text-align: center;">
+        <a href="{% url 'index' %}" class="generate-button">Go back to Home</a>
+    </div>
+    
+</body>
+</html>

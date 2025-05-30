@@ -1,0 +1,125 @@
+/* Overall page */
+body {
+    background: #f6fff8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Page Heading */
+h1 {
+    text-align: center;
+    color: #2e7d32;
+    margin-bottom: 30px;
+}
+
+/* Diet Plan Table */
+table {
+    width: 90%;
+    margin: 0 auto 50px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Table Header */
+th {
+    background-color: #81c784;
+    color: white;
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+/* Table Cells */
+td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Alternate Row Coloring */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Day Section Title */
+.day-title {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #388e3c;
+}
+
+/* Meal Title */
+.meal-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #4caf50;
+    margin-top: 20px;
+}
+
+/* Meal Items */
+.meal-items {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Back Button */
+.back-button {
+    display: block;
+    width: 200px;
+    margin: 40px auto;
+    padding: 12px 20px;
+    text-align: center;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #388e3c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+    h1 {
+        font-size: 28px;
+    }
+}
+
+
+/* Beautiful Generate Another Plan button */
+.generate-button {
+    display: inline-block;
+    margin: 40px auto;
+    padding: 14px 28px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.generate-button:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+

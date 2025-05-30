@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain & AI Healthcare</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}"> <!-- Linking CSS -->
+</head>
+<body>
+
+    <header>
+        <h1>Revolutionizing Healthcare with <span>Blockchain and AI</span></h1>
+        <p>Experience the future of personalized healthcare with blockchain-secured health IDs and AI-powered nutrition planning.</p>
+        <div class="buttons">
+            <button type="button" class="primary" onclick="window.location.href='{% url 'health_id' %}';">Get Your Health ID Now</button>
+            <button type="button" class="secondary" onclick="window.location.href='{% url 'create_plan' %}';">Create Diet Plan</button>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="card">
+            <video width="100%" autoplay loop muted>
+                <source src="{% static 'video/fingerprint-scan.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h3>Create Health ID</h3>
+            <p>Generate your unique blockchain-secured health identity.</p>
+        </div>
+        <div class="card">
+            <video width="100%" autoplay loop muted>
+                <source src="{% static 'video/data-analysis.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h3>Secure Data</h3>
+            <p>Your health data is encrypted and stored securely.</p>
+        </div>
+        <div class="card">
+            <video width="100%" autoplay loop muted>
+                <source src="{% static 'video/settings.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h3>Control Access</h3>
+            <p>Choose who can access your health information.</p>
+        </div>
+        <div class="card">
+            <video width="100%" autoplay loop muted>
+                <source src="{% static 'video/maze.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h3>AI Analysis</h3>
+            <p>Our AI analyzes your health profile.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="stats">
+            <div>
+                <h2>100%</h2>
+                <p>Data Privacy</p>
+            </div>
+            <div>
+                <h2>AI</h2>
+                <p>Powered Analysis</p>
+            </div>
+            <div>
+                <h2>24/7</h2>
+                <p>Secure Access</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

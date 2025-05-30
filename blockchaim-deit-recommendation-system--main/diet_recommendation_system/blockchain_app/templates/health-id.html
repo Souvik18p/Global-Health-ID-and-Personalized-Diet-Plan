@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health ID Access</title>
+    <link rel="stylesheet" href="{% static 'css/health-id.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome!</h1>
+        <p>Are you a new user or an existing user?</p>
+
+        <div class="choice-box">
+            <button type="button" class="new" onclick="window.location.href='{% url 'diet' %}';">Create New Health ID</button>
+            <button class="existing" onclick="window.location.href='{% url 'retrieve' %}';">Health ID Exists</button>
+        </div>
+    </div>
+
+</body>
+</html>
